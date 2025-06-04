@@ -1,0 +1,6 @@
+python3
+netcat-openbsd
+iptables
+knockd
+fail2ban
+dnscrypt-proxy
