@@ -30,11 +30,6 @@ def configure_firewall():
     for rule in rules:
         subprocess.run(rule, shell=True)
 
-# Start DNSCrypt-proxy for encrypted DNS queries
-def start_dnscrypt_proxy():
-    print("[*] Starting DNSCrypt-proxy for encrypted DNS...")
-    subprocess.run("dnscrypt-proxy -config ./dnscrypt-proxy.toml", shell=True)
-
 # Setup port knocking
 def setup_port_knocking():
     print("[*] Setting up knockd...")
@@ -50,7 +45,6 @@ def main():
     configure_firewall()
     setup_port_knocking()
     setup_fail2ban()
-    start_dnscrypt_proxy()
     print("[+] Skeleton0 is running. Hardened and hidden.")
 
 if __name__ == "__main__":
